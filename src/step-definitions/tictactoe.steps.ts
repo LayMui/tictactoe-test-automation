@@ -5,6 +5,7 @@ import { Actor, actorInTheSpotlight, Log } from '@serenity-js/core'
 import { Navigate } from '@serenity-js/webdriverio'
 
 import { MoveTo } from '../tasks/MoveTo'
+import { VerifyWinner } from '../tasks/VerifyWinner'
 
 require('dotenv').config()
 
@@ -26,7 +27,7 @@ When(
 
 Then(/.* should able to see the winner/, async () => {
   await actorInTheSpotlight().attemptsTo(
-   
+   VerifyWinner.ontheBoard()
   )
 })
 
