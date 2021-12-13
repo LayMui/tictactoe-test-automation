@@ -1,11 +1,10 @@
 import 'expect-webdriverio'
 
 import { DataTable, Given, Then, When } from '@cucumber/cucumber'
-import { Actor, actorInTheSpotlight, Check, Log } from '@serenity-js/core'
+import { Actor, actorInTheSpotlight, Log } from '@serenity-js/core'
 import { Navigate } from '@serenity-js/webdriverio'
 
 import { MoveTo } from '../tasks/MoveTo'
-
 
 require('dotenv').config()
 
@@ -19,7 +18,6 @@ When(
   '{pronoun} make the move on the board',{timeout:60000},
   async (actor: Actor, table: DataTable) => {
     const move = table.hashes()[0].move
-    
     await actor.attemptsTo(
       Log.the('ARRAY : ' + move.split(',')),
       MoveTo.board(move.split(','))

@@ -94,7 +94,7 @@ export const config: WebdriverIOConfig = {
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
       // excludeDriverLogs: ['bugreport', 'server'],
-      browserstackLocal: true,
+     // browserstackLocal: true,
       'goog:chromeOptions': {
         args: [
           //  '--headless',

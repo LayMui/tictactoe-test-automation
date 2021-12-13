@@ -1,8 +1,8 @@
 import { by, Target } from '@serenity-js/webdriverio'
 
 export const Square = {
-  move: (sq: string) =>
-    Target.the('square').located(by.css(`button[data-testid="${sq[0]}"]`))
+  element: (sq: string) =>
+    Target.the('square in the board').located(by.css(`button[data-testid="${sq}"]`))
 
 }
 
