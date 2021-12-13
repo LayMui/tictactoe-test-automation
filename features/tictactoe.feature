@@ -10,9 +10,10 @@ Feature: TicTacToe game
 @test
   Scenario: Able to see who is the winner
     When she make the move on the board 
-     | move     |
-     | 1,3,4,7  |
-    Then she should able to see the winner
+     | move          |
+     | 0,1,3,4,7,8,6 |
+    Then she should able to see the winner 
+     
   
 
   
