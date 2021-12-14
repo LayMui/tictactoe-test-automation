@@ -7,7 +7,7 @@ import { Element } from 'webdriverio'
 export class Board {
    static gameInfo =  (includedText: string): Question<Promise<Element<'async'>>> => {
     return Target.all('game info')
-       .located(by.css('.game-info'))
+       .located(by.css('.game-info'))  
        .where(Text, includes(includedText))
        .first()
   }
