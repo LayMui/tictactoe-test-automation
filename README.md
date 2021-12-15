@@ -13,3 +13,13 @@ references:
 ```
 https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html
 ```
+
+To run on browserstack
+```
+yarn test:bs
+```
+
+to view
+```
+https://automate.browserstack.com/
+```
