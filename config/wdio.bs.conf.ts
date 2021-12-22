@@ -323,5 +323,5 @@ export const config: WebdriverIOConfig = {
   //onReload: function(oldSessionId, newSessionId) {
   // }
 }
-config.user = 'username'
-config.key = 'access-key'
+config.user = process.env.BROWSERSTACK_USERNAME
+config.key = process.env.BROWSERSTACK_ACCESS_KEY 
