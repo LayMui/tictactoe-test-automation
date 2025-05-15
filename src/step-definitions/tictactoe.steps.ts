@@ -2,17 +2,18 @@ import 'expect-webdriverio'
 
 import { DataTable, Given, Then, When } from '@cucumber/cucumber'
 import { Actor, actorInTheSpotlight, Log } from '@serenity-js/core'
-import { Navigate } from '@serenity-js/webdriverio'
+
 
 import { MoveTo } from '../tasks/MoveTo'
 import { VerifyWinner } from '../tasks/VerifyWinner'
+import { Navigate } from '@serenity-js/web'
 
 require('dotenv').config()
 
 Given(
   '{actor} is at the TicTacToe',
   async (actor: Actor) =>
-    await actor.attemptsTo(Navigate.to(process.env.TICTACTOE_BASE_URL))
+    await actor.attemptsTo(Navigate.to(`${process.env.TICTACTOE_BASE_URL}`))
 )
 
 When(

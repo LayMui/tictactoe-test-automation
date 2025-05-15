@@ -1,20 +1,20 @@
 {
   "name": "serenity-js-cucumber-webdriverio-template",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "serenity-bdd update",
     "clean": "rimraf target",
-    "test": "failsafe clean test:test:execute test:report",
-    "test:test:execute": "wdio config/wdio.test.conf.ts",
+    "test": "failsafe clean test:execute test:report",
+    "test:execute": "wdio wdio.conf.ts",
     "test:report": "serenity-bdd run --features ./features",
-    "test:bs": "failsafe clean test:test:bs:execute test:report",
-    "test:test:bs:execute": "wdio config/wdio.bs.conf.ts",
+    "start": "mkdirp target/site/serenity && npx http-server -p 8080 target/site/serenity -s -o",
     "lint": "eslint --ext ts --config .eslintrc.js .",
-    "lint:fix": "npm run lint -- --fix",
-    "report": "open target/site/serenity/index.html",
-    "report:window": "start target/site/serenity/index.html"
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serenity-js/serenity-js-cucumber-webdriverio-template.git"
   },
   "keywords": [
     "serenity-js",
@@ -23,42 +23,44 @@
     "testing",
     "webdriverio"
   ],
-  "engines": {
-    "node": "^12 || ^14 || ^16",
-    "npm": "^6 || ^7"
+  "author": "Jan Molak <jan.molak@smartcodeltd.co.uk>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/serenity-js/serenity-js/issues"
   },
-  "devDependencies": {
-    "@cucumber/cucumber": "^7.3.1",
-    "@serenity-js/assertions": "^2.32.1",
-    "@serenity-js/console-reporter": "^2.32.1",
-    "@serenity-js/core": "^2.32.1",
-    "@serenity-js/cucumber": "^2.32.1",
-    "@serenity-js/rest": "^2.32.1",
-    "@serenity-js/serenity-bdd": "^2.32.1",
-    "@serenity-js/webdriverio": "^2.32.1",
-    "@typescript-eslint/eslint-plugin": "^4.30.0",
-    "@typescript-eslint/parser": "^4.30.0",
-    "@wdio/cli": "^7.11.1",
-    "@wdio/cucumber-framework": "^7.11.0",
-    "@wdio/local-runner": "^7.11.1",
-    "@wdio/spec-reporter": "^7.10.1",
-    "chromedriver": "^96.0.0",
-    "dotenv": "^10.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-unicorn": "^35.0.0",
-    "eslint-plugin-unused-imports": "^1.1.4",
-    "expect-webdriverio": "^3.1.2",
-    "is-ci": "^3.0.0",
-    "npm-failsafe": "^0.4.3",
-    "rimraf": "^3.0.2",
-    "tiny-types": "^1.16.1",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.2",
-    "wdio-chromedriver-service": "^7.2.0"
+  "homepage": "https://serenity-js.org",
+  "engines": {
+    "node": "^18.12 || ^20 || ^22"
   },
   "dependencies": {
-    "@wdio/browserstack-service": "^7.16.10"
-  }
+    "@cucumber/cucumber": "^11.1.1",
+    "@serenity-js/assertions": "^3.31.0",
+    "@serenity-js/console-reporter": "^3.31.0",
+    "@serenity-js/core": "^3.31.0",
+    "@serenity-js/cucumber": "^3.31.0",
+    "@serenity-js/serenity-bdd": "^3.31.0",
+    "@serenity-js/web": "^3.31.0",
+    "@serenity-js/webdriverio": "^3.31.0",
+    "@wdio/cli": "^9.4.2",
+    "@wdio/globals": "^9.4.2",
+    "@wdio/local-runner": "^9.4.2",
+    "@wdio/spec-reporter": "^9.4.2",
+    "webdriverio": "^9.4.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unicorn": "^52.0.0",
+    "eslint-plugin-unused-imports": "^3.2.0",
+    "http-server": "^14.1.1",
+    "mkdirp": "^3.0.1",
+    "npm-failsafe": "^1.3.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

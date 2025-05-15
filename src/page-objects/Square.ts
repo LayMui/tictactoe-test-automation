@@ -1,11 +1,9 @@
-import { by, Target } from '@serenity-js/webdriverio'
+import { By, PageElement } from "@serenity-js/web";
+
 
 export const Square = {
   element: (sq: string) =>
-    Target.the('square in the board').located(
-      by.css(`button[data-testid="${sq}"]`)
-      
-    ),
+      PageElement.located(By.css(`button[data-testid="${sq}"]`)).describedAs('login button'),
 
 }
 

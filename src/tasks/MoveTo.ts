@@ -1,6 +1,7 @@
-import { Log, Task } from '@serenity-js/core'
-import { Click, isVisible, Wait } from '@serenity-js/webdriverio'
+import { Log, Task, Wait } from '@serenity-js/core'
+
 import { Square } from '../page-objects/Square'
+import { Click, isVisible } from '@serenity-js/web'
 
 export const MoveTo = {
   board: (sq: string[]) =>

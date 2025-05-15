@@ -1,12 +1,14 @@
 import { equals } from '@serenity-js/assertions'
-import { Question } from '@serenity-js/core'
-import { by, Target, Text } from '@serenity-js/webdriverio'
-import { Element } from 'webdriverio'
+import { QuestionAdapter } from '@serenity-js/core'
+import { By, PageElement, PageElements } from '@serenity-js/web'
+import { Text } from '@serenity-js/web'
+
 
 export class Game {
   static info = () =>
-    Target.all('winner').located(by.css('div div'))
+   PageElements.located(By.css('div div')).describedAs('winner')
 
-  static winner = (name: string): Question<Promise<Element<'async'>>> =>
+
+  static winner = (name: string): QuestionAdapter<PageElement<unknown>> =>
    Game.info().where(Text, equals(name)).first()
 }
